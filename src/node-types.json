@@ -94,7 +94,7 @@
     "fields": {},
     "children": {
       "multiple": true,
-      "required": true,
+      "required": false,
       "types": [
         {
           "type": "rule",
@@ -116,6 +116,14 @@
     "named": false
   },
   {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "SSID",
+    "named": false
+  },
+  {
     "type": "comment",
     "named": true
   },
@@ -126,9 +134,5 @@
   {
     "type": "ip",
     "named": true
-  },
-  {
-    "type": "ssid=",
-    "named": false
   }
 ]

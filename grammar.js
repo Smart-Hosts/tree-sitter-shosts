@@ -17,14 +17,14 @@ module.exports = grammar({
 
   rules: {
     // TODO: add the actual grammar rules
-    source_file: $ => seq($._instruction, optional(repeat(seq("\n", $._instruction)))),
+    source_file: $ => repeat(seq($._instruction, "\n")),
     _instruction: $ => choice(
       $.rule,
     ),
     rule: $ => seq(
       $.action,
       $.domains,
-      optional(seq(",", $.condition)),
+      optional(seq(token.immediate(","), $.condition)),
     ),
     action: $ => choice(
       $.ip,
@@ -38,7 +38,7 @@ module.exports = grammar({
       $.cond_ssid,
     ),
     cond_ssid: $ => seq(
-      "ssid=", $.double_quoted_string
+      alias(/[sS][sS][iI][dD]/, "SSID"), token.immediate("="), $.double_quoted_string
     ),
 
     double_quoted_string: () =>

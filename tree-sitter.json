@@ -5,7 +5,10 @@
       "camelcase": "SHosts",
       "scope": "source.shosts",
       "path": ".",
-      "file-types": null,
+      "file-types": [
+        "shosts"
+      ],
+      "highlights": "queries/highlights.scm",
       "injection-regex": "^shosts$"
     }
   ],
