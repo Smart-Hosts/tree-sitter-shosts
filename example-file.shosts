@@ -1,4 +1,6 @@
 # This is a sample hosts file used by Smart Hosts.
 127.0.0.1 example.com
-192.168.1.1 nas.home  nas.local, ssid="home" # NAS server LAN address for LAN network
-100.64.0.1 nas.home # NAS server Tailscale address for WAN network
+# NAS server Lan address for Lan network
+192.168.1.1 *nas.home nas.local, ssid="home*"
+# NAS server Tailscale address for Wan network
+100.64.0.1 *nas.home

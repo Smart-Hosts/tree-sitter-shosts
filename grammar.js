@@ -14,7 +14,6 @@ module.exports = grammar({
     $.comment,
     /\s/,
   ],
-
   rules: {
     // TODO: add the actual grammar rules
     source_file: $ => repeat(seq($._instruction, "\n")),
@@ -32,7 +31,7 @@ module.exports = grammar({
     ip: () => /\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/,
 
     domains: $ => repeat1($.domain),
-    domain: () => /[a-zA-Z0-9\.\-]+/,
+    domain: () => /[a-zA-Z0-9\.\-\[\]\?\*\\]+/,
 
     condition: $ => choice(
       $.cond_ssid,
