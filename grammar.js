@@ -15,7 +15,6 @@ module.exports = grammar({
     /\s/,
   ],
   rules: {
-    // TODO: add the actual grammar rules
     source_file: $ => repeat(seq($._instruction, "\n")),
     _instruction: $ => choice(
       $.rule,
